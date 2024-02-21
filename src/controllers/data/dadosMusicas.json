@@ -1,0 +1,39 @@
+{
+  "Musica": [
+    {
+      "id": "1",
+      "nome": "nomezada",
+      "imagem": "https://source.unsplash.com/random",
+      "cantor": "aaaa",
+      "album": "Single"
+    },
+    {
+      "id": "2",
+      "nome": "a",
+      "imagem": "https://source.unsplash.com/random",
+      "cantor": "a",
+      "album": "a"
+    },
+    {
+      "id": "3",
+      "nome": "a",
+      "imagem": "https://source.unsplash.com/random",
+      "cantor": "a",
+      "album": "a"
+    },
+    {
+      "id": "4",
+      "nome": "a",
+      "imagem": "https://source.unsplash.com/random",
+      "cantor": "a",
+      "album": "a"
+    },
+    {
+      "id": "5",
+      "nome": "a",
+      "imagem": "https://source.unsplash.com/random",
+      "cantor": "a",
+      "album": "a"
+    }
+  ]
+}

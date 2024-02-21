@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento das Músicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="../images/Spotify_icon.svg.png" id="icone">
+        <h1>Gerenciamento de Musicas</h1>
+    </header>
+    <main>
+        <div id="listaMusicas"></div>
+        <script src="../src/musicas.js"></script>
+    </main>
+
+<form id="formAdicionarMusica">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" required>
+    <label for="nomeMusica">Nome:</label>
+    <input type="text" id="nomeMusica" name="nomeMusica" required>
+    <label for="imagemMusica">Imagem:</label>
+    <input type="text" id="imagemMusica" name="imagemMusica" required>
+    <label for="cantorMusica">Cantor:</label>
+    <input type="text" id="cantorMusica" name="cantorMusica" required>
+    <label for="albumMusica">Album:</label>
+    <input type="text" id="albumMusica" name="albumMusica" required>
+    <button type="button" onclick="adicionarMusica()">Adicionar</button>
+</form>
+</body>
+</html>
