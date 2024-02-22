@@ -26,18 +26,34 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 30px;
     padding: 30px;
+    
 }
 
 #listaMusicas img {
-    padding-top: 5px;
+    padding-top: 15px;
     width: 180px;
     height: 180px;
-    border-radius: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+
+#texto {
+    padding-left: 20px;
+    padding-bottom: 5px;
+    color: rgb(250, 250, 250);
+    opacity: 90%;
+}
+
+#texto2 {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    color: rgb(250, 250, 250);
+    opacity: 65%;
 }
 
 #iconeMusica {
-    
+    display: flex;
+    justify-content: center;
 }
 
 .musica {
@@ -45,7 +61,8 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgb(52, 52, 52);
-    
+    flex-direction: column;
+    cursor: pointer;
 }
 
 #icone {

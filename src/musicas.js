@@ -38,6 +38,7 @@ function loadMusicasList() {
         .then(data => displayMusicasList(data))
         .catch(error => console.error('Error:', error));
 }
+
 function displayMusicasList(data) {
     const listaMusicas = document.getElementById('listaMusicas');
     listaMusicas.innerHTML = '';
@@ -47,6 +48,8 @@ function displayMusicasList(data) {
         listItem.innerHTML = 
         `
             <img src="${musica.imagem}" id="iconeMusica">
+            <h3 id="texto">${musica.nome}<h3>
+            <h4 id="texto2">${musica.cantor}<h4>
         `
         listaMusicas.appendChild(listItem);
     });
