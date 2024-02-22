@@ -54,33 +54,40 @@ body {
     padding: 30px;
 }
 
-#listaMusicas img {
-    padding-top: 15px;
-    width: 180px;
-    height: 180px;
-    padding-left: 20px;
+.musica {
+    border-radius: 10px;
+    background-color: rgb(52, 52, 52);
+    flex-direction: column;
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.musica:hover {
+    background-color: rgba(52, 52, 52, 0.356);
+}
+
+.musica img {
+    margin-top: 10px;
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #texto {
-    padding-top: 5px;
-    padding-left: 20px;
+    padding-top: 10px;
     padding-bottom: 5px;
     color: rgb(250, 250, 250);
     opacity: 90%;
 }
 
 #texto2 {
-    padding-left: 20px;
     padding-bottom: 10px;
     color: rgb(250, 250, 250);
     opacity: 65%;
-}
-
-.musica {
-    border-radius: 10px;
-    background-color: rgb(52, 52, 52);
-    flex-direction: column;
-    cursor: pointer;
 }
 
 #quadrado-preto {
@@ -88,9 +95,9 @@ body {
     top: 50%;
     left: 50%;
     width: 500px;
-    height: 450px;
-    background-color: black;
-    opacity: 95%;
+    height: 540px;
+    background-color: rgb(0, 0, 0);
+    opacity: 90%;
     z-index: 999;
     transform: translate(-50%, -50%);
     color: white;
@@ -102,9 +109,9 @@ body {
     top: 50%;
     left: 50%;
     width: 500px;
-    height: 400px;
+    height: 440px;
     background-color: black;
-    opacity: 95%;
+    opacity: 90%;
     z-index: 999;
     transform: translate(-50%, -50%);
     color: white;
@@ -145,7 +152,7 @@ body {
 }
 
 .botao {
-    margin-top: 10px;
+    margin-top: 15px;
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -155,8 +162,53 @@ body {
     transition: background-color 0.3s, color 0.3s;
     background-color: #007bff;
     color: white;
-  }
+}
 
-  .botao:hover {
+.botao:hover {
     background-color: #0056b3;
-  }
+}
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#quadrado-preto3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    background-color: black;
+    opacity: 97%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    color: white;
+    border-radius: 20px;
+}
+
+#quadrado-preto3 h4 {
+    padding-left: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+#quadrado-preto h2 {
+
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#quadrado-preto2 h2 {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#tudo,
+#tudo2,
+#tudo3 {
+    display: none;
+}

@@ -5,12 +5,20 @@ const fs = require('fs');
 server.use(express.json());
 server.post('/musicas', (req, res) => {
     const novaMusica = req.body;
+
+    novaMusica.id = parseInt(novaMusica.id);
+
     if (!novaMusica.id || !novaMusica.nome || !novaMusica.imagem || !novaMusica.cantor || !novaMusica.album) {
         return res.status(400).json({ mensagem: "Dados incompletos, tente novamente" });
     } else {
-        dadosMusicas.Musica.push(novaMusica);
-        salvarDadosMusicas(dadosMusicas);
-        return res.status(201).json({ mensagem: "Nova musica cadastrado com sucesso!" });
+        const musicaExistente = dadosMusicas.Musica.find(musica => musica.id === novaMusica.id);
+        if (musicaExistente) {
+            return res.status(400).json({ mensagem: "ID já existe, tente novamente com um ID diferente" });
+        } else {
+            dadosMusicas.Musica.push(novaMusica);
+            salvarDadosMusicas(dadosMusicas);
+            return res.status(201).json({ mensagem: "Nova música cadastrada com sucesso!" });
+        }
     }
 });
 server.get('/musicas', (req, res) => {

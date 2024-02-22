@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <div id="pai">
             <img src="../images/Spotify_icon.svg.png" id="icone">
@@ -26,13 +26,13 @@
 
     <section id="tudo">
         <div id="quadrado-preto">
-            
+
         </div>
     </section>
     <section id="tudo2">
         <div id="quadrado-preto2">
             <h4 onclick="sair()">Voltar</h4>
-
+            <h2>Adicionar uma Música:</h2>
             <form id="formAdicionarMusica">
                 <label for="id">ID:</label>
                 <input type="text" id="id" name="id" required>
@@ -49,5 +49,25 @@
 
         </div>
     </section>
+    <section id="tudo3">
+        <div id="quadrado-preto3">
+            <h4 onclick="sair()">Voltar</h4>
+
+            <form id="formAdicionarMusica">
+                <label for="id">ID:</label>
+                <input type="text" id="idAlt" name="id" required>
+                <label for="nomeMusica">Nome:</label>
+                <input type="text" id="nomeMusicaAlt" name="nomeMusica" required>
+                <label for="imagemMusica">Imagem:</label>
+                <input type="text" id="imagemMusicaAlt" name="imagemMusica" required>
+                <label for="cantorMusica">Cantor:</label>
+                <input type="text" id="cantorMusicaAlt" name="cantorMusica" required>
+                <label for="albumMusica">Álbum:</label>
+                <input type="text" id="albumMusicaAlt" name="albumMusica" required>
+                <button type="button" onclick="alterarMusica()" class="botao">Alterar</button>
+            </form>
+        </div>
+    </section>
 </body>
+
 </html>
