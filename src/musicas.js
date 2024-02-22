@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//-------------------------Função de adicionar música
+
 function adicionarMusica() {
     const id = document.getElementById('id').value;
     const nome = document.getElementById('nomeMusica').value;
@@ -52,6 +54,8 @@ function loadMusicasList() {
         .catch(error => console.error('Error:', error));
 }
 
+//--------------------------Funções para ver, e abrir as informações das musicas.
+
 function displayMusicasList(data) {
     const listaMusicas = document.getElementById('listaMusicas');
     listaMusicas.innerHTML = '';
@@ -70,23 +74,20 @@ function displayMusicasList(data) {
         listaMusicas.appendChild(listItem);
     });
 
-    let tela = document.getElementById('tudo');
-
-    const vish2 = document.getElementById('tudo2');
-
-    let vish3 = document.getElementById('tudo3');
-
     function ver(id) {
         const musica = data.find(musica => musica.id === id);
         if (musica) {
-            tela.style.display = "block";
+
+            const modalM = document.getElementById("dialogMusica")
+            modalM.showModal()
+
             const vish = document.getElementById('quadrado-preto');
             vish.innerHTML = 
             `
-            <h4 onclick="sair()">Voltar</h4>
+            <h4 onclick="sairModal2()">Voltar</h4>
             <h2>Música:</h2>
             <div id="dentro">
-                <img src="${musica.imagem}" id="iconeMusica">
+                <a href="https://www.youtube.com/results?search_query=${musica.nome} ${musica.cantor}"><img src="${musica.imagem}" id="iconeMusica"></a>
                 <br>
                 <h3>ID: ${id}</p>
                 <p>Nome: ${musica.nome}</p>
@@ -102,29 +103,12 @@ function displayMusicasList(data) {
         }
     }
 }
-function sair() {
-    let tela = document.getElementById('tudo');
-    tela.style.display = "none";
-    const vish2 = document.getElementById('tudo2');
-    vish2.style.display = "none";
-    let vish3 = document.getElementById('tudo3');
-    vish3.style.display = "none";
-}
-    
-function adicionar() {
-    const vish2 = document.getElementById('tudo2');
-    vish2.style.display = "block";
-}
 
-function deletarMusica(id) {
-    fetch(`http://localhost:3000/api/musicas/${id}`, {
-        method: 'DELETE',
-    })
-}
+//------------Função de alterar
 
 function alterarMusicas(id, nome, imagem, cantor, album) {
-    let vish3 = document.getElementById('tudo3');
-    vish3.style.display = "block";
+    const modalA = document.getElementById("dialogAlt")
+    modalA.showModal()
 
     document.getElementById("idAlt").value = id;
     document.getElementById("nomeMusicaAlt").value = nome;
@@ -171,4 +155,34 @@ function alterarMusica() {
         alert('Erro ao adicionar música.');
     });
     
+}
+
+//-----------Função de Deletar
+
+function deletarMusica(id) {
+    fetch(`http://localhost:3000/api/musicas/${id}`, {
+        method: 'DELETE',
+    })
+}
+
+//----------Algumas funções pra sair e abrir os modal
+
+function sairModal() {
+    const modal = document.getElementById("dialogAdd")
+    modal.close()
+}
+
+function sairModal2() {
+    const modalM = document.getElementById("dialogMusica")
+    modalM.close()
+}
+
+function sairModal3() {
+    const modalA = document.getElementById("dialogAlt")
+    modalA.close()
+}
+    
+function adicionarModal() {
+    const modal = document.getElementById("dialogAdd")
+    modal.showModal()
 }
