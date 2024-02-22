@@ -17,7 +17,7 @@ function salvarDados(dados){
 }
 
 //---------------------------MUSICAS-------------------------------------------
-server.post('/musica', (req, res) => {
+server.post('/musicas', (req, res) => {
     const novaMusica = req.body
 
     if(!novaMusica.id || !novaMusica.nome || !novaMusica.imagem || !novaMusica.cantor || !novaMusica.album) {
@@ -29,11 +29,11 @@ server.post('/musica', (req, res) => {
     }
 })
 
-server.get('/musica', (req, res) => {
-    return res.json(dados.users)
+server.get('/musicas', (req, res) => {
+    return res.json(dados.musica)
 })
 
-server.put('/musica/:id', (req, res) => {
+server.put('/musicas/:id', (req, res) => {
 
     const musicaId = parseInt(req.params.id)
 
@@ -58,7 +58,7 @@ server.put('/musica/:id', (req, res) => {
     }
 })
 
-server.delete("/musica/:id", (req, res) => {
+server.delete("/musicas/:id", (req, res) => {
     const musicaId = parseInt(req.params.id)
 
     dados.musica = dados.musica.filter(m => m.id !== musicaId)

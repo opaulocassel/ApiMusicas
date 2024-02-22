@@ -19,7 +19,7 @@ server.get('/musicas', (req, res) => {
 server.put('/musicas/:id', (req, res) => {
     const musicaId = parseInt(req.params.id);
     const atualizarMusica = req.body;
-    const idMusica = dadosMusicas.Musica.findIndex(c => c.id === musicaId);
+    const idMusica = dadosMusicas.Musica.findIndex(m => m.id === musicaId);
 
     if (idMusica === -1) {
         return res.status(404).json({ mensagem: "Musica não encontrado :/" });
@@ -35,7 +35,7 @@ server.put('/musicas/:id', (req, res) => {
 });
 server.delete("/musicas/:id", (req, res) => {
     const musicaId = parseInt(req.params.id);
-    dadosMusicas.Musica = dadosMusicas.Musica.filter(c => c.id !== musicaId);
+    dadosMusicas.Musica = dadosMusicas.Musica.filter(m => m.id !== musicaId);
     salvarDadosMusicas(dadosMusicas);
     return res.status(200).json({ mensagem: "Musica excluído com sucesso" });
 });
