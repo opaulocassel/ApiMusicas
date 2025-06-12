@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1a541626-f177-4b88-ae15-a996fe3565ea)# API Músicas
+# API Músicas
 
 Uma API de músicas.
 
